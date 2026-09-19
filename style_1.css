@@ -1,0 +1,44 @@
+body {
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    /* Hide scrollbar for carousel but keep smooth touch gestures */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .tap-scale {
+      transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease;
+    }
+    .tap-scale:active {
+      transform: scale(0.97);
+    }
+    /* Glow for selected transport in slide carousel */
+    .selected-transport-card {
+      border-color: #0D9488 !important;
+      background: linear-gradient(180deg, #F0FDFA 0%, #CCFBF1 100%) !important;
+      box-shadow: 0 0 0 2.5px #0D9488, 0 10px 18px -4px rgba(13, 148, 136, 0.22) !important;
+      transform: scale(1.02);
+    }
+    /* Pulse for highlight results */
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .pulse-subtle {
+      animation: softPulse 2s infinite ease-in-out;
+    }

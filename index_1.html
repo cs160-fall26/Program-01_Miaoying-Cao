@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-100" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PICK YOUR PACE</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="script.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col items-center justify-start p-0 sm:p-4 selection:bg-brand-200">
+<!-- Mobile Simulator Wrapper (max 430px on desktop, full screen on mobile) -->
+<div class="w-full max-w-[430px] min-h-screen sm:min-h-[850px] sm:max-h-[900px] bg-white sm:rounded-[36px] shadow-2xl flex flex-col overflow-hidden relative border border-slate-200/80" id="app-container">
+<!-- MAIN INTERACTIVE CONTAINER -->
+<main class="flex-1 overflow-y-auto custom-scrollbar flex flex-col relative min-h-0" id="appMain">
+<!-- ========================================================================= -->
+<!-- VIEW 1: HOME SCREEN -->
+<!-- ========================================================================= -->
+<section class="flex-1 flex flex-col p-6 pb-24 transition-all duration-300 justify-center gap-3" id="viewHome">
+<!-- Hero Header moved downward closer to navigation cards -->
+<div class="text-center pt-10 pb-0">
+<div class="flex justify-center items-center">
+<img alt="PICK YOUR PACE" class="w-full max-w-[280px] h-auto object-contain mx-auto drop-shadow-sm transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs6rM75iv1SryT1EKV39fv1UNKYug3RhH6i2HXkklFZwVSVWdRheKGKeErYqscyN2a2SP0iMj1flFjDPzGk0O4xkIgwMzrsvsDhSf3KK0NFQU_aHHn2T_biBfs6tjQLAPZGFivNPhglWR5t71lNxZ0vqjI12rLG_8x8gOtv30J_pLCxbV0zN98fkYGXoOO3a3-Y73FD_VPtGI1gGrcMR7hT5SJbFo4pZDhxjm4eIO5XDk2eyVT1q8OqjA0xhN7HRfU"/>
+</div>
+</div>
+<!-- Mode Selection Action Cards -->
+<div class="space-y-4 my-0 py-2">
+<!-- MODE 1 CARD -->
+<button class="w-full text-left bg-gradient-to-br from-white to-brand-50/50 hover:to-brand-100/60 p-5 rounded-3xl border-2 border-brand-200/90 shadow-lg shadow-brand-700/5 hover:shadow-brand-600/15 tap-scale transition group" id="homeChooseRideBtn">
+<div class="flex items-center space-x-4">
+<!-- Mode 1 Custom Combined Icon -->
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-teal-500 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-600/25 group-hover:scale-105 transition-transform">
+<svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<!-- Route + vehicle -->
+<path class="opacity-80" d="M3 17h4l3-6 5 2 4-5" stroke-dasharray="2 2"></path>
+<circle cx="19" cy="8" fill="currentColor" r="2.5"></circle>
+<path d="M2 19h20" stroke-width="2.5"></path>
+<circle cx="6" cy="19" r="2"></circle>
+<circle cx="18" cy="19" r="2"></circle>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-700 mt-0.5 transition-colors">
+                  Choose a Ride
+                </h3>
+</div>
+<div class="text-slate-300 group-hover:text-brand-600 transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</div>
+</div>
+</button>
+<!-- MODE 2 CARD -->
+<button class="w-full text-left bg-gradient-to-br from-white to-cyan-50/50 hover:to-cyan-100/60 p-5 rounded-3xl border-2 border-teal-200/90 shadow-lg shadow-teal-700/5 hover:shadow-cyan-600/15 tap-scale transition group" id="homeCompareAllBtn">
+<div class="flex items-center space-x-4">
+<!-- Mode 2 Custom Multi-Vehicle Compare Icon -->
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-teal-700 to-cyan-500 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-teal-700/25 group-hover:scale-105 transition-transform">
+<svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<!-- Bar chart style transportation comparison -->
+<path d="M3 3v18h18"></path>
+<path d="M7 16v-4"></path>
+<path d="M12 16V8"></path>
+<path d="M17 16V4"></path>
+<circle cx="7" cy="11" fill="currentColor" r="1.5"></circle>
+<circle cx="12" cy="7" fill="currentColor" r="1.5"></circle>
+<circle cx="17" cy="3" fill="currentColor" r="1.5"></circle>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-lg font-bold text-slate-900 group-hover:text-teal-700 mt-0.5 transition-colors">
+                  Compare All
+                </h3>
+</div>
+<div class="text-slate-300 group-hover:text-teal-600 transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</div>
+</div>
+</button>
+</div>
+<!-- Micro-footer info -->
+<div class="pt-4 border-t border-slate-100 flex items-center justify-end text-[11px] text-slate-500">
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VIEW 2: MODE 1 — SPECIFIC CALCULATOR -->
+<!-- ========================================================================= -->
+<section class="flex-1 flex flex-col p-5 pb-32 transition-all duration-300 hidden" id="viewMode1">
+<!-- Unified header: Centered, text-3xl font-semibold tracking-tight text-slate-800, pt-6 pb-4 -->
+<div class="pt-6 pb-4 text-center">
+<h1 class="text-3xl font-semibold tracking-tight text-slate-800">Choose a Ride</h1>
+</div>
+<div class="mt-2 space-y-5">
+<!-- STEP 1: DISTANCE INPUT -->
+<div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-slate-100 shadow-sm focus-within:border-brand-500 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<label class="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-1.5" for="m1DistanceInput">
+<span class="w-5 h-5 rounded-full bg-brand-600 text-white flex items-center justify-center text-[10px]">1</span>
+<span class="">Distance</span>
+</label>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-full hidden" id="m1ConfirmedBadge">Confirmed</span>
+<button class="text-[11px] font-bold text-slate-400 hover:text-slate-600 flex items-center gap-1 tap-scale px-1.5 py-0.5 rounded-md hover:bg-slate-100 transition-colors" id="m1ResetBtn"  title="Reset distance and selection" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="">Reset</span>
+</button>
+</div>
+</div>
+<!-- Input group -->
+<div class="relative flex items-center">
+<input class="w-full text-2xl font-black text-slate-900 placeholder:text-slate-300 placeholder:font-medium bg-slate-50 border-2 border-slate-200 rounded-2xl py-3 px-4 focus:outline-none focus:bg-white focus:border-brand-500 transition-all pr-32" id="m1DistanceInput" min="0.1"  placeholder="e.g. 5" step="any" type="number"/>
+<div class="absolute right-2 flex items-center space-x-1.5">
+<span class="text-xs font-bold text-slate-400 mr-0.5">miles</span>
+<button class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-sm tap-scale transition flex items-center gap-1" id="m1ConfirmBtn"  type="button">
+<span class="">GO!</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</div>
+</div>
+<!-- Instruction / Feedback helper -->
+<div class="mt-2 flex items-start justify-between">
+</div>
+<!-- Error message container -->
+<p class="text-[11px] font-bold text-coral-600 mt-1.5 flex items-center gap-1 hidden" id="m1DistanceError">
+<svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" fill-rule="evenodd"></path></svg>
+<span class="">Distance must be greater than 0.</span>
+</p>
+</div>
+<!-- STEP 2: CHOOSE TRANSPORTATION - SQUARE-ISH CAROUSEL WITH LARGE HERO PHOTO & NAME UNDERNEATH -->
+<div class="transition-all duration-300" id="m1Step2Container">
+<div class="flex items-center justify-between mb-2">
+<div>
+<label class="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-brand-600 text-white flex items-center justify-center text-[10px]">2</span>
+<span class="">Choose Transportation</span>
+</label>
+</div>
+</div>
+<!-- Global out-of-range banner if distance> all ranges -->
+<div class="mb-3 p-3 bg-coral-50 border border-coral-200 rounded-2xl text-center hidden" id="m1AllOutOfRangeBanner">
+<p class="text-xs font-bold text-coral-700 flex items-center justify-center gap-1.5">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" fill-rule="evenodd"></path></svg>
+<span class="">No transportation can travel this distance.</span>
+</p>
+<p class="text-[11px] text-coral-600 mt-0.5">Maximum vehicle range in fleet is 47 miles.</p>
+</div>
+<!-- Horizontal Swipeable Carousel Container -->
+<div class="relative -mx-5 px-0 overflow-hidden">
+<div class="flex gap-4 overflow-x-auto no-scrollbar py-3 px-24 scroll-smooth snap-x snap-mandatory" id="m1TransportCarousel"><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer selected-transport-card border-brand-600 bg-brand-50 text-slate-900" data-index="0" id="m1-slide-walking">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-brand-700 font-extrabold">pedestrian</span>
+<span class="text-slate-400">1/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Walking" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_bvt7XBOoZFzJB1eM0f_Lcx81IIPWjXqcMJ35sANBkMIoVpYPfZbCGGrEg8doWyRby7_w1GuAqH4_hBBowTdnjZHMUFfAudL1KoISDndVAQt1-upAyjTFsIBjWjTBBpqaeyw37EYWwZyoA9WRys1QZO0Hw3Ee44b_rbLXyQgOfbvofi7XH9o_GnAAs7iu75fL8AieMdU8LEu_OnqFko9rJDnTvlk03b4PHjLMgzn8rGcXbbYTuLNtpqRTLfbWtxOV"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-brand-900 font-bold">
+              Walking
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              3.1 mph • 30 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="1" id="m1-slide-evolve">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">electric-longboard</span>
+<span class="text-slate-400">2/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Evolve Bamboo GTR 2-in-1" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCKIxdNunfpjCOknhKectvP81INfM1RtNOYa1ZI6zM_B3-bXjlblDeazgAm7oQ588K4AT65nK_BvYbQVww-_h0UmmxJUf5JZufddaEoWPX0t_Wb84TR9VG1at6_VIHA2LuNi0yEC4u3xmKKC4F9YehKmC3z3iDB3W4G70LpWGkrwr6QKCc8DqS33Ru1TKA7KlAn3MdWstjvezkuaLPmSRGMbDMMJ945PFdZJ7uIgLe6l_8buZu_Rk-UFliyYWmA6vk"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              Evolve Bamboo GTR 2-in-1
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              24 mph • 31 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="2" id="m1-slide-onewheel">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">one-wheel</span>
+<span class="text-slate-400">3/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Onewheel GT" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH4HdJ9MblvffuM4Ue0BBFBZRxTGLKK-caVeQjdNgYEwPSsJggLe_nwoPjU5IFoJ55gNMK0Lv-JOSU0Rf9zqpjdwgU8rXyu8gD78xpPc1DefdA3a2wt4sOg2qA91NEt9fpHr65CdGr2Hggi9UyTnZe6sESgmfrJmq7W0vrjzQVdR9F1QFoYs70DqpxiN6RwXm1M8kvSJLnjHEoQYcY78YuRQHiX2V6QHieJYh8SdSY3CWLfPvo3cB0hckjISi6vTKr"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              Onewheel GT
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              20 mph • 32 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="3" id="m1-slide-razor">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">e-scooter</span>
+<span class="text-slate-400">4/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Razor E Prime III" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACKGBMH9fNlWIQRHD1xvmp1L-C4rsYfNhGHpb5MJVZJ6am0HhHfIJ007WUoUhkdclEi7OLe5e0jrftYA6v1oI67vp1oY1WKdGkgbI5HbIjE3VW_J2Bh6AV9dOBpS1e1tn8emwi7-RH17bmNXEAj4YC15cN96gAIaGOv4VZdMjlYbOTfQbW3_J3Ndek1LkW0WyjEChDPDcxiILd-jpml94I78muenSuG_bKtXJTU-UON1g38-NRzlQL37LByQPcXfYC"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              Razor E Prime III
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              18 mph • 15 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="4" id="m1-slide-mototec">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">e-board</span>
+<span class="text-slate-400">5/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="MotoTec Electric Skateboard" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnTRWWkG0a016ksGKO5Fb8y9nB0rcZcYkpjKvjeppvI3yCLkYWNxbrvuzcplHFlTOUZrI_5d0W-DKU_KmT5pSG1axeg8pJh6tvFGrU_MNPOWHeQ4E5IXZtQW-qRClJPRscpGG7ln0nkNPmEkOJLRDt_IesIW-RWZ07oomZYgDAZ11ydLk81hZ667FNgcGaxfLRNngcBn822HHxI3lQOTmUUqVYN_XcvB9t3WQsVRQrvHLHvcNEzgDPOrAlU8GU0Lw4"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              MotoTec Electric Skateboard
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              22 mph • 10 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="5" id="m1-slide-segway">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">self-balancing</span>
+<span class="text-slate-400">6/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Segway Ninebot S2" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA2OsiW9D_0_2Q5XDZrGYoxcS2SUADQmThhBvUH1VE3jB38W_qym-7iOVaRIhHzcANyXPkji6I63PIm8-DjttJqSExR38KUZEBhMdC-YGEu-QYK0UveAKDWIpGXsZLBdUzYizC8GKcryJZXS76HjuPerGms-sXJ_feihfeeSXTAk9MgBTuFB96oKxAtH8vyniL8hrVRZZYjeMX76gbJfebwvl8IMhW4ioX-CqLS7mCLObgTwJbJqCABASOccSGyFhm"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              Segway Ninebot S2
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              11 mph • 22 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="6" id="m1-slide-unagi">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">dual-motor-scooter</span>
+<span class="text-slate-400">7/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Unagi Model One E500" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv3OtOqMy5WO750rZesrGXDSpMS4kSITOZgxvhP2XjYZYWzQh-Zc_V03tkZZkroQfRGb8q8zPYu6o32d6obmZ8CzJaHt8FMp9xQW4ovOberhQDg2AQaf56RTp8mTcSTGBLAxAnjwdeI9A_JubXDjApVP0AwXa4sLGujQiE9FofeKdamgbBMBURQR-zzG0dkHklIgPXWGDkdUpWh2xNpqXVP59gAnwf7jlp-tErsWnu6DB3lCw-kR6r6lRuBg5MH4tn"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              Unagi Model One E500
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              19 mph • 15.5 mi
+            </p>
+</div>
+</div><div class="flex-shrink-0 w-[176px] h-[180px] snap-center flex flex-col items-center justify-between p-3 rounded-3xl border-2 transition-all duration-200 relative select-none cursor-pointer bg-white border-slate-200 text-slate-700 shadow-sm tap-scale" data-index="7" id="m1-slide-inmotion">
+<!-- Top meta line -->
+<div class="w-full flex items-center justify-between text-[9px] font-bold px-1">
+<span class="uppercase tracking-wider text-slate-400">euc</span>
+<span class="text-slate-400">8/8</span>
+</div>
+<!-- Hero Product Image -->
+<div class="w-24 h-24 my-auto flex items-center justify-center p-1 overflow-hidden transition-transform">
+<img alt="Inmotion V8S Electric Unicycle" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSFcQLrMetMmkK0l-tv8Yt2zTzR4fKvYfHXYPZZ7uAAiRBiE74eXmD4qhAl1m_eF-_TSDkooNS1SwPQOVo0-BImxYl4pfjbwYek3s-FLlH7pAmZaZWQNd4lisP_Equn0QRLdy8Xp6P4YECVOLH9Qcc2TSglhMieG5w21oe4ovu1jQ45FQjKqmyeSSyUF-6rW9skBRXkiIOHQO2jlTYHirUkZg21xH0P2JxXuPQpYt9lZmvuLTU0le5H3mL2BYjec1g"/>
+</div>
+<!-- Product name placed underneath the image -->
+<div class="w-full text-center px-1 mb-0.5">
+<h4 class="text-xs font-semibold leading-tight line-clamp-2 max-w-[150px] mx-auto text-slate-700">
+              Inmotion V8S Electric Unicycle
+            </h4>
+<p class="text-[10px] text-slate-400 font-normal mt-0.5">
+              22 mph • 47 mi
+            </p>
+</div>
+</div></div>
+</div>
+<!-- Carousel Pagination Dots -->
+<div class="flex items-center justify-center gap-1.5 mt-2" id="m1CarouselDots"><button class="w-5 h-2 rounded-full bg-brand-600 transition-all duration-200" title="Go to slide 1" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 2" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 3" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 4" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 5" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 6" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 7" type="button"></button><button class="w-2 h-2 rounded-full bg-slate-200 hover:bg-slate-300 transition-all duration-200" title="Go to slide 8" type="button"></button></div>
+</div>
+<!-- STEP 3: CALCULATE & RESULT CARD -->
+<div class="pt-1" id="m1Step3Container">
+<!-- Calculate button -->
+<button class="w-full py-4 px-6 rounded-2xl font-black text-base tracking-wide uppercase transition-all shadow-md bg-slate-200 text-slate-400 cursor-not-allowed flex items-center justify-center space-x-2" disabled="" id="m1CalculateBtn">
+<span class="">Calculate</span>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+<!-- Prominent Result Card (hidden initially by default until Calculate is pressed) -->
+<div class="mt-4 bg-gradient-to-br from-brand-600 to-teal-800 text-white rounded-3xl p-5 shadow-xl shadow-brand-700/20 relative overflow-hidden transition-all duration-300 hidden" id="m1ResultCard">
+<!-- Background subtle decorative wave -->
+<div class="absolute -right-8 -bottom-8 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-1">
+<span class="text-xs font-bold text-brand-100" id="m1ResultName">Walking</span>
+<span class="text-xs font-semibold text-brand-200" id="m1ResultDistance">5 mi</span>
+</div>
+<!-- Main Hero Time Typography -->
+<div class="py-4 text-center">
+<div class="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-sm" id="m1ResultTime">1 h 37 min</div>
+<p class="text-xs text-brand-100 font-medium mt-2" id="m1ResultSpeedRange">Speed: 3.1 mph • Vehicle Range: 30 miles</p>
+</div>
+<!-- Quick action footer -->
+<div class="pt-2 flex items-center justify-end">
+<button class="text-xs font-bold text-white bg-white/20 hover:bg-white/30 px-3.5 py-1.5 rounded-xl tap-scale transition flex items-center gap-1.5" id="m1CompareAllBtn">
+<span class="">Compare All</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- VIEW 3: MODE 2 — COMPARE ALL TRANSPORTATION -->
+<!-- ========================================================================= -->
+<section class="flex-1 flex flex-col p-5 pb-32 transition-all duration-300 hidden" id="viewMode2">
+<!-- Unified header: Centered, text-3xl font-semibold tracking-tight text-slate-800, pt-6 pb-4 -->
+<div class="pt-6 pb-4 text-center">
+<h1 class="text-3xl font-semibold tracking-tight text-slate-800">Compare All</h1>
+</div>
+<!-- Mode 2 Distance Control Card -->
+<div class="mt-1 bg-white rounded-3xl p-4 sm:p-5 border-2 border-slate-100 shadow-sm focus-within:border-teal-500 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<label class="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-1.5" for="m2DistanceInput">
+<span class="">Enter your Trip Distance</span>
+</label>
+<button class="text-[11px] font-bold text-slate-400 hover:text-slate-600 flex items-center gap-1 tap-scale px-1.5 py-0.5 rounded-md hover:bg-slate-100 transition-colors" id="m2ResetBtn"  title="Reset distance and results" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="">Reset</span>
+</button>
+</div>
+<!-- Input + Compare Button inside / stack -->
+<div class="flex flex-col sm:flex-row gap-2">
+<div class="relative flex-1 flex items-center">
+<input class="w-full text-2xl font-black text-slate-900 placeholder:text-slate-300 placeholder:font-medium bg-slate-50 border-2 border-slate-200 rounded-2xl py-3 px-4 focus:outline-none focus:bg-white focus:border-teal-500 transition-all pr-20" id="m2DistanceInput" min="0.1"  placeholder="e.g. 5" step="any" type="number"/>
+<span class="absolute right-4 text-sm font-bold text-slate-400">miles</span>
+</div>
+<button class="w-full sm:w-auto bg-gradient-to-r from-teal-600 to-brand-600 hover:from-teal-700 hover:to-brand-700 text-white font-black text-sm px-6 py-3.5 rounded-2xl shadow-md shadow-teal-700/20 tap-scale transition flex items-center justify-center space-x-2" id="m2CompareBtn"  type="button">
+<span class="">Compare</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</div>
+<!-- Error message for Mode 2 -->
+<p class="text-[11px] font-bold text-coral-600 mt-2 flex items-center gap-1 hidden" id="m2DistanceError">
+<svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" fill-rule="evenodd"></path></svg>
+<span class="" id="m2ErrorText">Distance must be greater than 0.</span>
+</p>
+<!-- Initial guide hint if no distance entered -->
+<p class="text-[11px] text-slate-400 font-medium mt-2 flex items-center gap-1 hidden" id="m2GuideHint">
+<svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="">Enter a trip distance greater than 0</span>
+</p>
+</div>
+<!-- Comparison Results Section (Hidden initially until user compares) -->
+<div class="transition-all duration-300" id="m2ResultsWrapper">
+<!-- Mode 2 Comparison Header Status -->
+<div class="mt-5 mb-3 flex items-center justify-between px-1" id="m2ResultsHeader">
+<div class="flex items-center space-x-2">
+<span class="w-2 h-2 rounded-full bg-teal-500"></span>
+<h3 class="text-xs font-black uppercase tracking-wider text-slate-700">
+        Ranked Travel Times (<span class="" id="m2FleetCount">8</span>)
+      </h3>
+</div>
+<span class="text-xs font-extrabold text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-0.5 rounded-full" id="m2ActiveDistLabel">Distance: 5 mi</span>
+</div>
+<!-- Results List: Clean Grid Format (2-columns) with Doubled Photo Size -->
+<div class="grid grid-cols-2 gap-3 pb-8" id="m2ResultsList"><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Evolve Bamboo GTR 2-in-1" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0JxNjN2SDTECkm2YivpuiXJyA1JvzxBSmav8Mq1wCcRaC38CGr95PUPmhsuTBf9tNCzUgLVdNFewofmOpepVz7l7GVqCptd-54CafgIbQm-Xa_ttlrgFDq9AWuXpjay-ANauEKIl9tOG-hQZbeaTY9ij1jCc2B22ytAs7w2B1mTM9j3YEIgpm9DOwQuIWLF42FTaBcXWZmUn5pTB2Rc_Tp70WNjZzfHOvgX6_YdgDfpargRQyGYy1U_XQaVYfjfnb"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Evolve Bamboo GTR 2-in-1
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              13 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="MotoTec Electric Skateboard" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMErRFFdrFxOl70isnMWNq3zub-WhL34YMC3pztS1sKlbDNFr97QKoJAsf24iqUBjN1jMHRx82TTCp00junQn8rnyt41-wKebLnlxKCu7cJOipGhX13q5vaK0MUet6JQ4T64v1KSMbEbj1xSp3W6RdaQ5FOdYZMjTOhOwGNp6xBxJV9m2V7hfwTyHVfTuFiLCxjhovfvQXU0I1BfDNfOj9NoSJzWjJlyjLK7oFt1ycjQYzkaGCcT-VNxqi3GIdZSwk"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            MotoTec Electric Skateboard
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              14 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Inmotion V8S Electric Unicycle" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6fvTS7t-spsMu9Ezvhx6WQNmgraLjuPd-n0QQWHngUOr8uXnZ0r15p2_F2C1NEiwsP1TD6maTtExx4Kcu9QD8GOqHVoYEFcVj7tqg_HDDk6_r3m5wRzvod0LPiT1f8C_C2W3DRkgAdwPkH4om36MwuRLHJ9ubwKhUKd8kyEEUe2-I3DowIBGntcOG9tlt-9tD72wB1IkmZTKSHWL8ceCzamzLIOsJoyoXLICw7eWQgaihnd77M9MzGD-Ae-hfOeWj"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Inmotion V8S Electric Unicycle
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              14 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Onewheel GT" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwop6MDfMwrGrALDO4ApLiKjqA8hlm_stTj1PgAYP8O0vn2x-NSbQeWc4dyYq16k-I9R8ppfZrHrXvnTkYopB23UTisIeg_jllWcM-lEWAMYu30KGFXlNb58bhH_9SQFkLe28ddwdsl_wGKVg6LhSStTskJUiGBb3zYrYh9fbc5yQEyIeBWUQHUUnOWFDj_QY1omQBL6tjsPPY9QSCe3_X37iDaKrZ-zzhqwH7lGMh5Qd-q1ytSk7Z1z9_5v4tOd-h"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Onewheel GT
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              15 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Unagi Model One E500" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUwS5B1OgJhMEy_ya5TGldD3q2LaHG_PjLAAEhW18JuqX2QupG2iM0gNWpjM0FVc6N1PRliSTSv09dGBCIRIMSB7a7gEpxZNsG09dHnznQ1-QSqFWpnmxgODBRV9Kent1dn507mEt3CpaHtu4WU5DSaiG5RyNT5RsRLwsltSluZcF1GFvREikB2xal3UG6dofHdLV3lbgn3PSGCpLNXg02Hz1feWXNImMj8mi_fVV2OlIwtaATPsBSnbOrl3hEpvLS"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Unagi Model One E500
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              16 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Razor E Prime III" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjxXmTvHIPqHHQ8l4FUTYHzQHCBgs15Ov_Q7bCBoewfKE8FO4TzLhlhrAf23NRlWiUgmQIh6F_Tsu6P4uYPq6jEJw_RLz8yaGwSiwIRKaQCitz1IrgweMy518G1DWqdaMJL4Ra5kNX1aj1GOJb3Ig_AFTtXM_pzxHroUcjP71d6ze09vn7obwjmF2r4wns4f6z3JgO0TUfLVlo138v17WC7pDWOfrc6DOTmN-BzdgbNzBC2OEZqYjODRVojpI7eM5u"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Razor E Prime III
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              17 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Segway Ninebot S2" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtxufMWManHPkhI1ppfVT5WpPsMB97MfN2vDOqNagdcjTmC6mdwSi49X70EWtGf1CzobN-NnaIU1w1G_ZaYrkoJr_46eJDtmHf5-8p6NQ46_l8nxjCdPl8FmDWqpaca8LUNsPmTgl7SfpZLaYtsLIoSgMz6C_BwjbUevSEcCMusJsulYwF3WPN8os44qxCGyMKvsPKUJdtyvvpwpceY0L7Wi9qN84OQACnXyBhKcqDPhRssTu868gOFy5o_cgDaktd"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Segway Ninebot S2
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              27 min
+            </div>
+</div>
+</div><div class="p-4 rounded-3xl bg-white border-2 border-slate-100 hover:border-teal-300 shadow-sm text-slate-800 flex flex-col items-center text-center justify-between transition-all duration-200 tap-scale">
+<!-- Vehicle Icon / Product Image -->
+<div class="w-24 h-24 rounded-2xl flex items-center justify-center bg-teal-50/60 mb-2 p-1.5 transition-transform overflow-hidden">
+<div class="w-full h-full flex items-center justify-center">
+<img alt="Walking" class="w-full h-full object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4uI4FcPWn8RaGf5C0Uo8wg6vKxE7TUEsbYy8aNBnwtMJK90l3w8oIGx9WAYxEXwBxXJO2_nhsI0H0YWiGeggqyNJG8BYeaLV74qnjWfcBeD5byc1pg9dAls_2AsNlr6KEmjVxYnaJNRWtw1Qs21tXaM1EavJsHvCK46pwsJ-cKvPEDc5hym1ga573BhdepW3Z5GbrWxggRfWS-kWG6ktZV9zBUBTEkK79TOXQIs0V_a7lzcG2x0Ps2FNQX2oG43oB"/>
+</div>
+</div>
+<!-- Vehicle Name -->
+<h4 class="text-xs font-normal text-slate-600 leading-snug line-clamp-2 min-h-[32px] flex items-center justify-center mb-2 px-1">
+            Walking
+          </h4>
+<!-- Calculated Travel Time & Warning notice -->
+<div class="w-full flex flex-col items-center">
+<div class="w-full py-1.5 px-2 rounded-xl bg-teal-600 text-white text-xs font-black tracking-tight shadow-sm">
+              1 h 37 min
+            </div>
+</div>
+</div></div>
+</div>
+</section>
+</main>
+<!-- Sticky / Fixed Bottom Navigation Bar always visible on screen -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg px-6 py-2.5 flex items-center justify-around">
+<button class="flex-1 flex flex-col items-center justify-center text-center hover:text-brand-600 transition-colors text-brand-600" id="tabHome">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px] font-bold leading-tight">Home</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center text-center hover:text-brand-600 transition-colors text-slate-400" id="tabMode1">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px] font-bold leading-tight">Choose Ride</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center text-center hover:text-teal-600 transition-colors text-slate-400" id="tabMode2">
+<svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px] font-bold leading-tight">Compare All</span>
+</button>
+</nav>
+</div>
+<!-- APPLICATION LOGIC & VECTOR GRAPHICS ENGINE -->
+
+</body></html>
